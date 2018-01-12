@@ -1,0 +1,49 @@
+﻿@{
+    ViewBag.Title = "WebCalculator"; 
+}
+
+<style>
+    .btn-group {
+        width: 100%;
+    }
+    .operations {
+    }
+</style>
+
+<div class="container">
+    <div class="col-xs-12">
+        <form id="form" action="/Home/Index" method="post">
+            <br />
+
+            @*First number*@
+            <div class="form-group row">
+                <input type="number" class="form-control col-xs-12" name="firstNumber" placeholder="Write a number" required>
+            </div>
+
+            @*Dropdown menu with operations*@
+            <div class="form-group row">
+                <select name="operation" class="btn btn-default dropdown-toggle col-xs-12">
+                    <option value="+">Add ( + )</option>
+                    <option value="-">Subtract ( - )</option>
+                    <option value="*">Multiply ( * )</option>
+                    <option value="/">Divide ( / )</option>
+                </select>
+            </div>
+
+            @*Second number*@
+            <div class="form-group row">
+                <input type="number" class="form-control col-xs-12" name="secondNumber" placeholder="Write another number" required>
+            </div>
+
+            @*Calculate button*@
+            <div class="form-group row">
+                <button type="submit" class="btn btn-success btn-block col-xs-12" value="Create">Calculate</button>
+            </div>
+
+            @*Display result*@
+            <div class="form-group row">
+                <input type="number" class="calcResult form-control col-xs-12 text-center" value="@ViewBag.total" disabled />
+            </div>
+        </form>
+    </div>
+</div>
